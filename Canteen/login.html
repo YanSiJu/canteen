@@ -79,7 +79,6 @@
 			}
 			
 			.oauth-area .oauth-btn:active {
-				
 				border: solid 1px #aaa;
 			}
 			
@@ -95,14 +94,14 @@
 			<h1 class="mui-title">登录</h1>
 		</header>
 		<div class="mui-content">
-			<form id='login-form' class="mui-input-group" action="#" method="post">
+			<form id='login-form' class="mui-input-group" method="post">
 				<div class="mui-input-row">
-					<label>账号</label>
-					<input id='account' type="text"    name="userName" class="mui-input-clear mui-input" placeholder="请输入用户名">
+					<label>用户名</label>
+					<input id='account' type="text" name="userName" class="mui-input-clear mui-input" placeholder="请输入用户名">
 				</div>
 				<div class="mui-input-row">
 					<label>密码</label>
-					<input id='password' type="password" name="password"  class="mui-input-clear mui-input" placeholder="请输入密码">
+					<input id='password' type="password" name="password" class="mui-input-clear mui-input" placeholder="请输入密码">
 				</div>
 			</form>
 			<form class="mui-input-group">
@@ -116,37 +115,61 @@
 				</ul>
 			</form>
 			<div class="mui-content-padded">
-				<button id='login' class="mui-btn mui-btn-block mui-btn-primary">登录</button>
-				<div class="link-area"><a id='reg' href="reg.html"">注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a>
+				<button id='login' class="mui-btn mui-btn-block mui-btn-primary" onclick="login()">登录</button>
+				<div class="link-area">
+					<a id='reg' href="reg.html" ">注册账号</a> <span class="spliter ">|</span> <a id='forgetPassword'   >忘记密码</a>
 				</div>
 			</div>
-			<div class="mui-content-padded oauth-area">
+			<div class="mui-content-padded oauth-area ">
 
 			</div>
 		</div>
-		<script src="js/mui.min.js"></script>
-		<script src="js/mui.enterfocus.js"></script>
-		<script src="js/app.js"></script>
+		<script src="js/mui.min.js "></script>
+		<script src="js/mui.enterfocus.js "></script>
+		<script src="js/app.js "></script>
 		<script>
 			mui.init();
-			document.getElementById("login").addEventListener('tap',function(){
-				mui.openWindow({
-				  url: "main.html",
-				  id: "main.html",
-				});	
-			})
+			
+			function login(){
+				var name = $("#account").val();
+				var pwd = $("#password").val();
+				var data = {
+					"name":name,
+					"password":pwd
+				}
+				console.log(data);
+				$.ajax({
+						url: 'http://172.16.42.21:8080/Canteen/User/login',
+						type: 'POST',
+						data: JSON.stringify(data),
+						contentType: 'application/json; charset=utf-8',
+						dataType: 'json',
+						success: function(response) {
+							var msg = response.msg;
+							console.log(msg);
+							if(msg == "1"){
+								window.location = "main.html ";
+							}else if(msg == "0"){
+								mui.toast('帐号或密码输入错误',{ duration:'3500', type:'div' }) 
+							}					
+						},error: function(msg) {
+							console.log(msg)
+						}
+					});
+			}
+			
 			
 			document.getElementById("reg").addEventListener('tap',function(){
 				mui.openWindow({
-				  url: "reg.html",
-				  id: "reg.html",
+				  url: "reg.html ",
+				  id: "reg.html ",
 				});	
 			})
 			
 			document.getElementById("forgetPassword").addEventListener('tap',function(){
 				mui.openWindow({
-				  url: "forget_password.html",
-				  id: "forget_password.html",
+				  url: "forget_password.html ",
+				  id: "forget_password.html ",
 				});	
 			})
 		</script>

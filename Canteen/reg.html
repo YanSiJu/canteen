@@ -155,7 +155,7 @@
 					flag = 0;
 				} else if(!reg.test(tel)) {
 					$("#tel_error").text("手机号码格式错误");
-					$("#tel").attr("placeholder","手机号码格式错误");
+					$("#tel").attr("placeholder", "手机号码格式错误");
 					flag = 0;
 				} else {
 					$("#tel_error").text("");
@@ -189,10 +189,29 @@
 					$("#repassword_error").attr("placeholder", "两次输入的密码不一致");
 					/*$("#repassword_error").text("两次输入的密码不一致");*/
 					flag = 0;
-				} else {
-					/*$("#repassword_error").text("");*/
 				}
 
+				if(flag == 1) {
+					var params = {
+						"name": $("#account").val(),
+						"tel": $("#tel").val(),
+						"password": $("#password").val()
+					}
+					console.log(params);
+					$.ajax({
+						url: 'http://172.16.42.21:8080/Canteen/User/register',
+						type: 'POST',
+						data: JSON.stringify(params),
+						contentType: 'application/json; charset=utf-8',
+						dataType: 'json',
+						success: function(response) {
+							window.location = "login.html";
+						},
+						error: function(msg) {
+							console.log(msg);
+						}
+					});
+				}
 				//阻止表单的默认行为
 				return false;
 			}
@@ -217,30 +236,6 @@
 						console.log(msg)
 					}
 				});
-
-				/*if(flag == 1) {
-					var params = {
-						"name": $("#account").val(),
-						"tel": $("#tel").val(),
-						"password": $("#password").val()
-					}
-					console.log(params);
-					$.ajax({
-						url: 'http://172.16.42.21:8080/Canteen/User/register',
-						url: 'http://localhost:8080/Canteen/User/register',
-						type: 'POST',
-						data: JSON.stringify(params),
-						contentType: 'application/json; charset=utf-8',
-						dataType: 'json',
-						success: function(response) {
-							
-							window.location = "login.html";
-						},
-						error: function(msg) {
-							console.log(msg)
-						}
-					});
-				}*/
 				return false;
 			}
 		</script>
