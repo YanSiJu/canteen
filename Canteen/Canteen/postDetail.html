@@ -1,0 +1,173 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		
+		<style type="text/css">
+			table{
+				margin-left: 5px;
+			}
+			.title{
+				height: 45px;
+				padding: 10px 10px;
+				margin:45px auto 20px;
+			}
+			.content{
+				width: 95%;
+				margin: 0 auto;
+				padding: 10px;
+				background-color: #FFFFFF;
+				border-radius:5px;
+			}
+			.content-imgs{
+				display: inline-block;
+				width: 45%;
+				margin: 6px;
+			}
+			.content-image{
+				width: 100%;
+				height: 100%;
+			}
+			body{
+				background-color: #EEEEEE;
+			}
+			.comment{
+				width: 95%;
+				margin: 5px auto 45px;
+				padding: 10px;
+				background-color: #FFFFFF;
+				border-radius:5px;
+			}
+			.td-image{
+				width: 80%;
+				border-radius: 50%;
+			}
+			.content>p{
+				color: #000000;
+				font-size: 18px;
+			}
+			.comment>table{
+				margin-top: 20px;
+			}
+			.nickname{
+				font-weight: bold;
+			}
+			.inputText{
+				float: left;
+				margin-left: 5px;
+			}
+			.confirm{
+				height: 30px;
+				margin: 7px 5px;
+				float: right;
+				border-radius: 6px;
+			}
+			#popover{
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-back mui-pull-left"></a>
+			<h1 class="mui-title">帖子详情</h1>
+		</header>
+		<!-- 姓名等信息 -->
+		<div class="title">
+			<table>
+				<tr>
+					<td>
+						<img src="images/p1.jpg" width="45px;" style="border-radius:10px;" />
+					</td>
+					<td colspan="3">
+						小M
+						<p>发表于 2016-06-30 15:30</p>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 内容 -->
+		<div class="content">
+			<p>周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>
+			<div class="content-imgs">
+				<img class="content-image" src="images/f10.jpg" />
+			</div>
+			<div class="content-imgs">
+				<img class="content-image" src="images/f10.jpg" />
+			</div>
+		</div>
+		<!-- 评论 -->
+		<div class="comment">
+			<h4>评论</h4>
+			<table>
+				<tr>
+					<td width="10%" valign="top"><img src="images/f7.jpg" class="td-image" /></td>
+					<td width="90%" style="padding:5px ;">
+						<div>
+							<p class="nickname">Snaker</p>
+							<p>何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼</p>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td width="10%" valign="top"><img src="images/f7.jpg" class="td-image" /></td>
+					<td width="90%" style="padding:5px ;">
+						<div>
+							<p class="nickname">Snaker</p>
+							<p>何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼</p>
+						</div>
+					</td>
+				</tr><tr>
+					<td width="10%" valign="top"><img src="images/f7.jpg" class="td-image" /></td>
+					<td width="90%" style="padding:5px ;">
+						<div>
+							<p class="nickname">Snaker</p>
+							<p>何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼何勇是傻逼</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!-- 底部导航栏 -->
+		<nav class="mui-bar mui-bar-tab">
+		    <a class="mui-tab-item">
+		        <span class="mui-tab-label">▲</span>
+		        <span class="mui-tab-label">赞</span>
+		    </a>
+		    <a class="mui-tab-item">
+		        <span class="mui-tab-label">▼</span>
+		    </a>		
+		    <a href="#popover" class="mui-tab-item bottom-item" >
+		        <span class="mui-icon mui-icon-compose"></span>
+		        <!--<span class="mui-tab-label mui-btn mui-btn-link mui-pull-right">评论</span>-->
+		    </a>
+		</nav>
+		<!-- 弹出式菜单 -->
+		<div id="popover" class="mui-popover">
+			<form method="" action="">
+				<div class="inputText">
+					<input type="text" placeholder="请输入评论" />
+				</div>
+				<div class="confirm">
+					<input type="submit" value="↑" />
+				</div>
+			</form>
+		</div>
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			
+		</script>
+	</body>
+
+</html>

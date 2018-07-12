@@ -1,144 +1,327 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Hello MUI</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css/mui.min.css" rel="external nofollow" rel="external nofollow" >
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css" rel="external nofollow" rel="external nofollow">
 		<style>
-			#body div{
+			#body div {
 				margin-top: 8px;
 			}
-			.content{
+			
+			.content {
 				margin-left: 5px;
 			}
-			.footer-left{
+			
+			.footer-left {
 				float: left;
 				margin-left: 5px;
 			}
-			.footer-right{
+			
+			.footer-right {
 				float: right;
 				margin-right: 5px;
 			}
-			font{
+			
+			font {
 				color: #836FFF;
 			}
 			
 			body {
 				background-color: white;
 			}
-			table{
-				margin-left: 5px;
-			}
-
-			#area{
+			
+			#area {
 				margin: 0 auto;
 				margin-top: 5px;
 				height: 420px;
 				width: 95%;
-				border-r
-				adius: 12px;
+				border-r adius: 12px;
 			}
-			input{
+			
+			input {
 				border-radius: 12px;
 			}
-			textarea{
+			
+			textarea {
 				border-radius: 12px;
 			}
-			#camera{
-				height: 120px;
-				width: 120px;
-				background: blue;
-			}
-			#sub{
+			
+			#sub {
 				margin-top: 20px;
 				width: 90%;
 			}
+			
+			.camera-image {
+				width: 80px;
+				height: 100px;
+			}
+			
+			.camera-td {
+				width: 30%;
+				padding: 5px;
+			}
+			
+			.content-imgs {
+				width: 95%;
+				margin: 0 auto;
+			}
+			
+			.content-image {
+				display: inline-block;
+				width: 46%;
+				margin: 0 1%;
+			}
 		</style>
-  </head>
-  <body>
-	<div id="slider" class="mui-slider">
-		<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-			<a class="mui-control-item">
-				发帖
-			</a>
-			<a class="mui-control-item">
-				推荐
-			</a>
-			<a class="mui-control-item">
-				热评
-			</a>			
-		</div>
-		<div class="mui-slider-progress-bar mui-col-xs-4"></div>
-		<div class="mui-slider-group">
-			<div id="2" class="mui-slider-item mui-control-content">
-				<div id="area">
-					<form method="post" action="#">
-						<input type="text" placeholder="输入你中意的菜品名"/>
- 						<textarea rows="4" cols="20" autofocus="autofocus" placeholder="大声说出你爱的菜..."></textarea>
- 						<div id="camera">
- 							<img src="images/camera.jpg" />
- 						</div>
-					</form>
-					<center><button id="sub" type="submit" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary">提交</button></center>
-				</div>
-			</div>				
-			<div id="1" class="mui-slider-item mui-control-content mui-active">
-						
-						
-		    <div id="body">
-					<div class="mui-card">
-						<!--页眉，放置标题-->
-						<div class="mui-card-header mui-card-media">
-							<table>
-								<tr>
-									<td height="45px" width="45px;">
-										<img src="images/p1.jpg" />
-									</td>
-									<td>
-										小M
-										<p>发表于 2016-06-30 15:30</p>
-									</td>
-								</tr>
-							</table>
-						</div>
-						<!--内容区-->
-						<div class="mui-card-content">
-							<h4 class="content">帖子标题</h4>
-							<p class="content">周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>
-						</div>
-						<!--页脚，放置补充信息或支持的操作-->
-						<div class="mui-card-footer">
-							<div class="footer-left">
-								<font>Like</font>
-								·
-								<font>Comment</font>
-							</div>
-							<div class="footer-right">
-								<font>Read More</font>
-							</div>
-					</div>
-				</div>	
-			</div>		
-						
-						
-			</div>		
-			<div id="3" class="mui-slider-item mui-control-content">
-				<ul class="mui-table-view">
-					<li class="mui-table-view-cell">
-						第一个选项卡子项3
-					</li>
-				</ul>
-			</div>				
-		</div>
-				
-</div>
-    <script src="js/mui.min.js"></script>
-    <script>
-      mui.init();
+	</head>
 
-    </script>
-</body>
+	<body>
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item" id="changeTo1">
+					发帖
+				</a>
+				<a class="mui-control-item" id="changeTo2">
+					推荐
+				</a>
+				<a class="mui-control-item" id="changeTo3">
+					热评
+				</a>
+			</div>
+			<div class="mui-slider-progress-bar mui-col-xs-4"></div>
+			<div class="mui-slider-group">
+				<div id="2" class="mui-slider-item mui-control-content">
+					<div id="area">
+						<form method="post" action="#">
+							<input type="text" placeholder="输入你中意的菜品名" />
+							<textarea rows="4" cols="20" autofocus="autofocus" placeholder="大声说出你爱的菜..."></textarea>
+							<div id="camera">
+								<table>
+									<tr id="camera-tr">
+										<td class="camera-td">
+											<img id="camera-image" class="camera-image" src="images/camera.jpg" />
+										</td>
+										<td id="camera-td1" class="camera-td">
+										</td>
+										<td id="camera-td2" class="camera-td">
+										</td>
+									</tr>
+								</table>
+							</div>
+						</form>
+						<center><button id="sub" type="submit" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary">提交</button></center>
+					</div>
+				</div>
+				<div id="1" class="mui-slider-item mui-control-content mui-active">
+					<div id="body">
+						<div class="mui-card" id="posts">
+							<!--页眉，放置标题-->
+							<div class="mui-card-header">
+								<h4 class="content">帖子标题</h4>
+							</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<p class="content">周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>
+								<div id="content-imgs" class="content-imgs">
+									<div class="content-image">
+										<img src="images/f10.jpg" />
+									</div>
+									<div class="content-image">
+										<img src="images/f10.jpg" />
+									</div>
+								</div>
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">
+								<div class="footer-left">
+									<button class="mui-btn mui-btn-link">Like</button> ·
+									<button class="mui-btn mui-btn-link">Comment</button>
+								</div>
+								<div class="footer-right">
+									<button class="mui-btn mui-btn-link more">Read More</button>
+								</div>
+							</div>
+						</div>
+						<div class="mui-card" id="posts">
+							<!--页眉，放置标题-->
+							<div class="mui-card-header">
+								<h4 class="content">帖子标题</h4>
+							</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<p class="content">周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>
+								<div id="content-imgs" class="content-imgs" style="display: none;">
+									<div class="content-image">
+										<img src="" />
+									</div>
+									<div class="content-image">
+										<img src="" />
+									</div>
+								</div>
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">
+								<div class="footer-left">
+									<button class="mui-btn mui-btn-link">Like</button> ·
+									<button class="mui-btn mui-btn-link">Comment</button>
+								</div>
+								<div class="footer-right">
+									<button class="mui-btn mui-btn-link more">Read More</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="3" class="mui-slider-item mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第一个选项卡子项3
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script>
+			mui.init();
+
+			mui.plusReady(function() {
+				var slider = mui('.mui-slider');
+				slider.slider({
+					interval: 0
+				});
+			});
+
+			function addPosts(posts) {
+				var tag = $("<div class=\"mui-card-header\"></div>");
+				var div = $("<div class=\"mui-card-content\"></div>").html("<p class=\"content\">周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>");
+				tag.html("<h4 class=\"content\">帖子标题</h4>");
+				tag.append(div);
+				console.log(tag);
+				$("#posts").append(tag);
+			}
+
+			$().ready(function() {
+				$.ajax({
+					url: 'http://172.16.42.21:8080/Canteen/post/displayPosts',
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function(response) {
+						var posts = response.posts;
+					},
+					error: function(msg) {
+						console.log(msg)
+					}
+				});
+			});
+
+			function post() {
+				//标题
+				var title = $("#title").val();
+				//内容
+				var content = $("#content").val();
+				var data = {
+					"title": title,
+					"content": content
+				};
+
+				$.ajax({
+					url: 'http://172.16.42.21:8080/Canteen/post/post',
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function(response) {
+						window.location = "posting.html";
+					},
+					error: function(msg) {
+						console.log(msg)
+					}
+				});
+
+			}
+
+			document.getElementById("changeTo1").addEventListener('tap', function() {
+				var slider1 = mui('.mui-slider');
+				slider1.slider().gotoItem(0);
+			});
+
+			document.getElementById("changeTo2").addEventListener('tap', function() {
+				var slider1 = mui('.mui-slider');
+				slider1.slider().gotoItem(1);
+			});
+
+			document.getElementById("changeTo3").addEventListener('tap', function() {
+				var slider1 = mui('.mui-slider');
+				slider1.slider().gotoItem(2);
+			});
+
+			document.getElementById("camera-image").addEventListener('tap', function() {
+				plus.gallery.pick(function(e) {
+					var td = document.getElementsByClassName("camera-td");
+					var content = new Array();
+					for(var i in e.files) {
+						//	    			alert(e.files[i]);
+
+						content[i] = '<img class="camera-image" src="' + e.files[i] + '">';
+						//	    			alert(content[i]);
+						//	    			td[i].innerHTML = content;
+					}
+					for(var i = 0; i < 2; i++) {
+						var index = content.length;
+						var td_id = "camera-td" + (i + 1);
+						alert(td_id);
+						var td = document.getElementById(td_id);
+						alert(index + "    " + td.innerHTML.length + "   " + td_id);
+						if(td.innerHTML.length == 11) {
+							td.innerHTML = content[i];
+							if(i == 1) {
+								td.innerHTML = content[i - 1];
+							}
+							if(index == i + 1) {
+								break;
+							}
+						} else {
+							continue;
+						}
+					}
+				}, function(e) {
+					console.log("取消选择图片");
+				}, {
+					filter: "image",
+					multiple: true
+				});
+			});
+
+			//  	var length = document.getElementsByClassName("mui-card-content").length;
+			//
+			//  	for(var i=0;i<length;i++){
+			//  		document.getElementsByClassName("mui-card-content")[i].addEventListener('tap',function(){
+			//  			alert(1147);
+			//  		})
+			//  	}
+
+			mui(".mui-card").on('tap', '.mui-card-content', function() {
+				mui.openWindow({
+					url: "postDetail.html",
+					id: "postDetail.html",
+				})
+			});
+			mui(".mui-card").on('tap', '.more', function() {
+				mui.openWindow({
+					url: "postDetail.html",
+					id: "postDetail.html",
+				})
+			});
+		</script>
+	</body>
+
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css" />
+		<title>顶部选项卡</title>
+		<style type="text/css">
+			body {
+				background-color: white;
+			}
+			
+			.mui-content-padded {
+				margin: 0px;
+				padding: 8px;
+			}
+			/** 设置 选项卡颜色，字体颜色 **/
+			
+			.mui-segmented-control .mui-control-item.mui-active {
+				color: white;
+				background-color: #5f75e0;
+			}
+			/** 设置 选项卡 高度（默认38px） **/
+			
+			.mui-segmented-control .mui-control-item {
+				line-height: 38px;
+				text-align: center;
+				color: #007aff;
+				border-color: #007aff;
+				border-left: 1px solid #007aff;
+			}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				<div class="mui-segmented-control">
+					<a class="mui-control-item mui-active" href="#item1">待办</a>
+					<a class="mui-control-item" href="#item2">已办</a>
+				</div>
+			</div>
+			<div id="item1" class="mui-control-content mui-active">
+				<div class="mui-scroll">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第一个选项卡子项-1
+						</li>
+						<li class="mui-table-view-cell">
+							第一个选项卡子项-2
+						</li>
+						<li class="mui-table-view-cell">
+							第一个选项卡子项-3
+						</li>
+						<li class="mui-table-view-cell">
+							第一个选项卡子项-4
+						</li>
+						<li class="mui-table-view-cell">
+							第一个选项卡子项-5
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div id="item2" class="mui-control-content">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-1
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-2
+					</li>
+					<li class="mui-table-view-cell">
+						第二个选项卡子项-3
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+
+</html>

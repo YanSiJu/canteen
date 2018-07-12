@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<style>
+			#share{
+				border: 0px;
+				background: transparent;
+				color:  #436EEE;
+			}
+			.picture{
+				height: 280px;
+				width: 98%;
+				margin: 0 auto;
+				background: gray;
+			}
+			img{
+				height: 280px;
+				width: 100%;
+			}
+			.food-title{
+				padding: 8px;
+			}
+			p{
+				margin-left: 5px;
+			}
+			.bottom-item{
+				margin-right: 100px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div>
+			<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+				<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+				<h1 class="mui-title">菜品详情</h1>
+				<button id="share" class=" mui-pull-right  mui-icon mui-icon-paperplane"></button>
+			</header>
+			<div class="picture">
+				<img src="images/f5.jpg" />
+			</div>
+			<div class="food-title">
+				<h3>菜品详情：</h3>
+				<p>菜品名称：<font id="name">小炒肉</font></p>
+				<p>菜品价格：<font id="price">¥4.0</font></p>
+				<p>菜品构成：<font id="constitute">青辣椒、猪肉</font></p>
+				<p>菜品热量：<font id="constitute">131 大卡（100克）</font></p>
+				<p>营养成分：<font id="">蛋白质、脂肪、维生素B1、B2，磷、钙、铁、维生素C</font></p>
+				<p>营养价值：<font id="">味甘咸、性平，入脾、胃、肾经；补肾养血，滋阴润燥的功效</font></p>
+			</div>
+			
+			<nav class="mui-bar mui-bar-tab">
+			    <a class="mui-tab-item">
+			        <span class="mui-tab-label">▲</span>
+			        <span class="mui-tab-label">赞</span>
+			    </a>
+			    <a class="mui-tab-item">
+			        <span class="mui-tab-label">▼</span>
+			    </a>			    
+			    <a class="mui-tab-item">
+			        <span class="mui-icon">ღ</span>
+			        <span class="mui-tab-label">感谢</span>
+			    </a>
+			    <a class="mui-tab-item">
+			        <span class="mui-icon mui-icon-star"></span>
+			        <span class="mui-tab-label">收藏</span>
+			    </a>
+			    <a class="mui-tab-item bottom-item" >
+			        <span class="mui-icon mui-icon-compose"></span>
+			        <span class="mui-tab-label">评论</span>
+			    </a>
+			</nav>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			mui.plusReady(function(){
+			    var self = plus.webview.currentWebview();
+			    var name = self.name;//获得参数
+			});
+		</script>
+	</body>
+
+</html>

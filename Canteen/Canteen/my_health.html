@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+		<style>
+			#content{
+				margin-top: 50px;
+			}
+			font{
+				font-size: 16px;
+				color: gray;
+			}
+		</style>
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav" style="padding-right: 15px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
+			<h1 class="mui-title">健康中心</h1>
+		</header>	
+		
+		<div id="content">
+			<ul class="mui-table-view">
+			    <li class="mui-table-view-cell">我的身高<font class="mui-pull-right"><font>172</font>cm</font></li>
+			    <li class="mui-table-view-cell">意见体重<font class="mui-pull-right"><font>57</font>kg</font></li>
+			    <li class="mui-table-view-cell">BIM指数<font class="mui-pull-right"></font></li>
+			</ul>
+						
+		</div>		
+		
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init();
+			var hei = $("font:eq(1)").text();
+			var wei = $("font:eq(3)").text();
+			var BMI = (Number(wei)*10000)/(Number(hei)*Number(hei));
+			var bmi = Number(BMI).toFixed(2);
+			
+			
+			if(bmi>23.5){
+				$("font:last").text(bmi+"(偏胖)");	
+			}else if(bmi<18.5){
+				$("font:last").text(bmi+"(偏瘦)");
+			}else{
+				$("font:last").text(bmi+"(正常)");
+			}
+		</script>
+	</body>
+
+</html>

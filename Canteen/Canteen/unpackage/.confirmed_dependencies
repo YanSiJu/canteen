@@ -1,0 +1,58 @@
+{
+	"main.html": {
+		"resources": [
+			"posting.html",
+			"HomePage.html",
+			"homepage.html"
+		],
+		"refer": [
+			"posting.html",
+			"HomePage.html",
+			"setting.html",
+			"homepage.html",
+			"mine.html",
+			"a.html",
+			"history_food_menu.html",
+			"my_message.html",
+			"notice.html"
+		]
+	},
+	"HomePage.html": {
+		"refer": [
+			"setting.html"
+		]
+	},
+	"login.html": {
+		"refer": [
+			"main.html",
+			"reg.html"
+		]
+	},
+	"homepage.html": {
+		"refer": [
+			"setting.html",
+			"details.html"
+		]
+	},
+	"a.html": {
+		"resources": [
+			"tab-top-webview-main.html"
+		],
+		"refer": [
+			"tab-top-webview-main.html"
+		]
+	},
+	"mine.html": {
+		"refer": [
+			"setting.html",
+			"password_manage.html",
+			"notice.html",
+			"help.html"
+		]
+	},
+	"reg.html": {
+		"refer": [
+			"login.html"
+		]
+	}
+}

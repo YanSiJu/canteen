@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		
+		<link rel="stylesheet" type="text/css" href="libs/mui.min.css" />
+		<link rel="stylesheet" type="text/css" href="css/HistoryDate.css" />
+		<style>
+			.canarea{
+				height: 150px;
+			}
+			button{
+				border-radius: 12px;
+				margin-left: 10px;
+				background: orange;
+			}
+			.img2{
+				height: 40px;
+				width: 40px;
+			}
+			#menu-one{
+				height: 80px;
+			}
+			#menu-two{
+				height: 80px;
+			}
+			.p2{
+				margin-top: -20px;
+				font-size: 12px;
+			}
+			#menu-one{
+				margin-top: 30px;
+			}
+			#menu-two{
+				margin-top: 30px;
+			}
+		</style>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script src="js/HD.js"></script>
+		<script type="text/javascript">
+			mui.init();
+		</script>
+	</head>
+
+	<body onload="setDate()">
+		
+		<div class="mui-content">
+			<div class="em-journal-bg">
+				<!--顶部标题-->
+				<div class="em-journal-title">
+					<div class="em-per-block pre">
+						<span class="mui-icon"></span>
+						<span></span>
+					</div>
+					<div id="currentTime" class="em-per-block mid">
+						<span>2017-08</span>
+					</div>
+					<div class="em-per-block next">
+						<span></span>
+					</div>
+				</div>
+				<!--面板内容-->
+				<table id="date-table" class="date-table">
+				</table>
+			</div>
+			<div>
+				<div class="canarea">
+					<button class="">午餐</button>
+					<div id="menu-one" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				        <div class="mui-scroll" id="menu">
+				            <a class="mui-control-item mui-active food-pictures">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f1.jpg" />
+										<p class="p2">酸辣椒炒肉</p>
+									</td></tr>
+								</table>
+				            </a>
+				            <a class="mui-control-item">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f2.jpg" />
+										<p class="p2">小炒鸡</p>
+									</td></tr>
+								</table>
+				            </a>
+				            <a class="mui-control-item">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f3.jpg" />
+										<p class="p2">青椒炒蛋</p>
+									</td></tr>
+								</table>
+				            </a>
+				            <a class="mui-control-item">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f4.jpg" />
+										<p class="p2">大碗花菜</p>
+									</td></tr>
+								</table>
+				            </a>
+				            <a class="mui-control-item">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f5.jpg" />
+										<p class="p2">小炒肉</p>
+									</td></tr>
+								</table>
+				            </a>
+				            <a class="mui-control-item">
+								<table class="table2">
+									<tr><td>
+										<img class="img2" src="images/f6.jpg" />
+										<p class="p2">红烧肉</p>
+									</td></tr>
+								</table>
+				            </a>
+				        </div>
+				    </div>
+				</div>
+				<div class="canarea">
+					<button class="">晚餐</button>
+									<div id="menu-two" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+			        <div class="mui-scroll">
+			            <a class="mui-control-item mui-active">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f6.jpg" />
+									<p class="p2">红烧肉</p>
+								</td></tr>
+							</table>
+			            </a>
+			            <a class="mui-control-item">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f7.jpg" />
+									<p class="p2">原味茄子</p>
+								</td></tr>
+							</table>
+			            </a>
+			            <a class="mui-control-item">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f8.jpg" />
+									<p class="p2">麻婆豆腐</p>
+								</td></tr>
+							</table>
+			            </a>
+			            <a class="mui-control-item">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f9.jpg" />
+									<p class="p2">干煸四季豆</p>
+								</td></tr>
+							</table>
+			            </a>
+			            <a class="mui-control-item">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f10.jpg" />
+									<p class="p2">鱼香肉丝</p>
+								</td></tr>
+							</table>
+			            </a>
+			            <a class="mui-control-item">
+							<table class="table2">
+								<tr><td>
+									<img class="img2" src="images/f1.jpg" />
+									<p class="p2">酸辣椒炒肉</p>
+								</td></tr>
+							</table>
+			            </a>
+			        </div>
+			    </div>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+
+</html>

@@ -1,0 +1,41 @@
+body,
+.mui-content {
+	background-color: #eff1f3;
+}
+/*日志背景*/
+.em-journal-bg {
+	width: 100%;
+	height: 191px;
+	background-image: url(../images/img_address_bg.png);
+	background-size: 100% 100%;
+	padding: 31px 10px 0 10px;
+}
+
+.em-journal-title {
+	width: 100%;
+	display: block;
+	height: 40px;
+	line-height: 40px;
+}
+.em-per-block {
+	float: left;
+	width: 33%;
+	color: #fff;
+	font-size: 18px;
+}
+.em-per-block.mid {
+	text-align: center;
+	font-size: 18px;
+}
+
+.date-table{
+	border-radius: 6px;
+	margin:30px 16px;
+	background-color: #FFFFFF;
+	width: 90%;
+	height: 40px;
+}
+.date-table .date-td{
+	width: 14.2%;
+	text-align: center;
+}

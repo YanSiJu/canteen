@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>Hello MUI</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" href="css/mui.min.css" rel="external nofollow" rel="external nofollow">
+		<style>
+			#body div {
+				margin-top: 8px;
+			}
+			
+			.content {
+				margin-left: 5px;
+			}
+			
+			.footer-left {
+				float: left;
+				margin-left: 5px;
+			}
+			
+			.footer-right {
+				float: right;
+				margin-right: 5px;
+			}
+			
+			font {
+				color: #836FFF;
+			}
+			
+			body {
+				background-color: white;
+			}
+			
+			table {
+				margin-left: 5px;
+			}
+			
+			#area {
+				margin: 0 auto;
+				margin-top: 5px;
+				height: 420px;
+				width: 95%;
+				border-r adius: 12px;
+			}
+			
+			input {
+				border-radius: 12px;
+			}
+			
+			textarea {
+				border-radius: 12px;
+			}
+			
+			#camera {
+				height: 120px;
+				width: 120px;
+				background: blue;
+			}
+			
+			#sub {
+				margin-top: 20px;
+				width: 90%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="slider" class="mui-slider">
+			<div class="mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
+				<a class="mui-control-item">
+					发帖
+				</a>
+				<a class="mui-control-item">
+					推荐
+				</a>
+				<a class="mui-control-item">
+					热评
+				</a>
+			</div>
+			<div class="mui-slider-progress-bar mui-col-xs-4"></div>
+			<div class="mui-slider-group">
+				<div id="2" class="mui-slider-item mui-control-content">
+					<div id="area">
+						<form method="post" action="#">
+							<input type="text" placeholder="输入你中意的菜品名" id="title" />
+							<textarea rows="4" cols="20" autofocus="autofocus" id="content" placeholder="大声说出你爱的菜..."></textarea>
+							<div id="camera">
+								<img src="images/camera.jpg" />
+							</div>
+						</form>
+						<center><button id="sub" type="submit" data-loading-icon="mui-spinner mui-spinner-custom" class="mui-btn mui-btn-primary">提交</button></center>
+					</div>
+				</div>
+				<div id="1" class="mui-slider-item mui-control-content mui-active">
+
+					<div id="body">
+						<div class="mui-card">
+							<!--页眉，放置标题-->
+							<div class="mui-card-header mui-card-media">
+								<table>
+									<tr>
+										<td height="45px" width="45px;">
+											<img src="images/p1.jpg" />
+										</td>
+										<td>
+											小M
+											<p>发表于 2016-06-30 15:30</p>
+										</td>
+									</tr>
+								</table>
+							</div>
+							<!--内容区-->
+							<div class="mui-card-content">
+								<h4 class="content">帖子标题</h4>
+								<p class="content">周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼周少玮是傻逼</p>
+							</div>
+							<!--页脚，放置补充信息或支持的操作-->
+							<div class="mui-card-footer">
+								<div class="footer-left">
+									<font>Like</font>
+									·
+									<font>Comment</font>
+								</div>
+								<div class="footer-right">
+									<font>Read More</font>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<div id="3" class="mui-slider-item mui-control-content">
+					<ul class="mui-table-view">
+						<li class="mui-table-view-cell">
+							第一个选项卡子项3
+						</li>
+					</ul>
+				</div>
+			</div>
+
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script src="js/jquery-3.3.1.min.js"></script>
+		<script type="application/javascript">
+			mui.init();
+
+			function post() {
+
+				//标题
+				var title = $("#title").val();
+				//内容
+				var content = $("#content").val();
+				var data = {
+					"title": title,
+					"content": content
+				};
+
+				$.ajax({
+					url: 'http://172.16.42.21:8080/Canteen/#/#',
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function(response) {
+						window.location = "posting.html";
+					},
+					error: function(msg) {
+						console.log(msg)
+					}
+				});
+
+			}
+		</script>
+
+	</body>
+
+</html>
