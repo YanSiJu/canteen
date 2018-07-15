@@ -186,18 +186,23 @@
 
 			function commentPost() {
 				var cmmt = $("#comment").val();
+				var postId = $("#postId").val();
 				var data = {
-					"commnt": cmmt
+					"comment": cmmt,
+					"postId": postId
 				};
 				$.ajax({
 					type: "POST",
-					url: "#",
+					url: "http://172.16.42.21:8080/Canteen/post/commentPosts",
 					data: JSON.stringify(data),
 					dataType: 'json',
 					contentType: 'application/json; charset=utf-8',
 					async: true,
 					success: function(response) {
-						addComment(response, cmmt);
+						var msg = response.msg;
+						if(msg == "1") {
+							addComment(response, cmmt);
+						}
 					},
 					error: function(response) {
 						console.log(response);
