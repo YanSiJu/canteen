@@ -7,28 +7,33 @@
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<link href="css/mui.min.css" rel="stylesheet" />
 		<style>
-			#share{
+			#share {
 				border: 0px;
 				background: transparent;
-				color:  #436EEE;
+				color: #436EEE;
 			}
-			.picture{
+			
+			.picture {
 				height: 280px;
 				width: 98%;
 				margin: 0 auto;
 				background: gray;
 			}
-			img{
+			
+			img {
 				height: 280px;
 				width: 100%;
 			}
-			.food-title{
+			
+			.food-title {
 				padding: 8px;
 			}
-			p{
+			
+			p {
 				margin-left: 5px;
 			}
-			.bottom-item{
+			
+			.bottom-item {
 				margin-right: 100px;
 			}
 		</style>
@@ -46,43 +51,83 @@
 			</div>
 			<div class="food-title">
 				<h3>菜品详情：</h3>
-				<p>菜品名称：<font id="name">小炒肉</font></p>
-				<p>菜品价格：<font id="price">¥4.0</font></p>
-				<p>菜品构成：<font id="constitute">青辣椒、猪肉</font></p>
-				<p>菜品热量：<font id="constitute">131 大卡（100克）</font></p>
-				<p>营养成分：<font id="">蛋白质、脂肪、维生素B1、B2，磷、钙、铁、维生素C</font></p>
-				<p>营养价值：<font id="">味甘咸、性平，入脾、胃、肾经；补肾养血，滋阴润燥的功效</font></p>
+				<p>菜品名称：
+					<font id="name">小炒肉</font>
+				</p>
+				<p>菜品价格：
+					<font id="price">¥4.0</font>
+				</p>
+				<p>菜品构成：
+					<font id="constitute">青辣椒、猪肉</font>
+				</p>
+				<p>菜品热量：
+					<font id="constitute">131 大卡（100克）</font>
+				</p>
+				<p>营养成分：
+					<font id="">蛋白质、脂肪、维生素B1、B2，磷、钙、铁、维生素C</font>
+				</p>
+				<p>营养价值：
+					<font id="">味甘咸、性平，入脾、胃、肾经；补肾养血，滋阴润燥的功效</font>
+				</p>
 			</div>
-			
+
 			<nav class="mui-bar mui-bar-tab">
-			    <a class="mui-tab-item">
-			        <span class="mui-tab-label">▲</span>
-			        <span class="mui-tab-label">赞</span>
-			    </a>
-			    <a class="mui-tab-item">
-			        <span class="mui-tab-label">▼</span>
-			    </a>			    
-			    <a class="mui-tab-item">
-			        <span class="mui-icon">ღ</span>
-			        <span class="mui-tab-label">感谢</span>
-			    </a>
-			    <a class="mui-tab-item">
-			        <span class="mui-icon mui-icon-star"></span>
-			        <span class="mui-tab-label">收藏</span>
-			    </a>
-			    <a class="mui-tab-item bottom-item" >
-			        <span class="mui-icon mui-icon-compose"></span>
-			        <span class="mui-tab-label">评论</span>
-			    </a>
+				<a class="mui-tab-item" onclick="praise()">
+					<span class="mui-tab-label">▲</span>
+					<span class="mui-tab-label">赞</span>
+					<span class="mui-tab-label" id="praiseCount">123</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-tab-label">▼</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-icon">ღ</span>
+					<span class="mui-tab-label">感谢</span>
+				</a>
+				<a class="mui-tab-item">
+					<span class="mui-icon mui-icon-star"></span>
+					<span class="mui-tab-label">收藏</span>
+				</a>
+				<a class="mui-tab-item bottom-item">
+					<span class="mui-icon mui-icon-compose"></span>
+					<span class="mui-tab-label">评论</span>
+				</a>
 			</nav>
 		</div>
+		<input type="hidden"  id="menuId" />
+		
 		<script src="js/mui.min.js"></script>
 		<script type="text/javascript">
 			mui.init();
-			mui.plusReady(function(){
-			    var self = plus.webview.currentWebview();
-			    var name = self.name;//获得参数
+			mui.plusReady(function() {
+				var self = plus.webview.currentWebview();
+				var name = self.name; //获得参数
 			});
+
+			//点赞
+			function praise() {
+				var count = $("#praiseCount").text();
+				var id = $("#menuId").val();
+				var data = {
+					"menuId": id
+				};
+				$.ajax({
+					url: 'http://172.16.42.21:8080/Canteen/menu/praise',
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function(response) {
+						var msg = response.msg;
+						if(msg == "1") {
+							$("#praiseCount").text(parseInt(count) + 1);
+						}
+					},
+					error: function(msg) {
+						console.log(msg)
+					}
+				});
+			}
 		</script>
 	</body>
 
