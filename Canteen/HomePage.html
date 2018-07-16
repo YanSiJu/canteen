@@ -12,32 +12,38 @@
 				font-size: 14px;
 				color: #8f8f94;
 			}
+			
 			.mui-btn {
 				padding: 10px;
 			}
-			#slider{
+			
+			#slider {
 				width: 95%;
 				height: 150px;
 				margin: 0 auto;
 			}
-			.img1{
+			
+			.img1 {
 				border-radius: 10px;
 				overflow: hidden;
 			}
-			.table1{
+			
+			.table1 {
 				width: 95%;
 				margin: 0 auto;
 				background: #FFFFFF;
 				margin-top: 10px;
 				border-radius: 12px;
 			}
-			.table1 td{
+			
+			.table1 td {
 				height: 95px;
 				margin-top: 10px;
 				text-align: center;
 				vertical-align: bottom;
 			}
-			#canteen{
+			
+			#canteen {
 				width: 95%;
 				height: 240px;
 				margin: 0 auto;
@@ -46,17 +52,21 @@
 				padding: 10px;
 				background: #FFFFFF;
 			}
-			.img2{
+			
+			.img2 {
 				height: 40px;
 				width: 40px;
 			}
-			#menu-one{
+			
+			#menu-one {
 				height: 80px;
 			}
-			#menu-two{
+			
+			#menu-two {
 				height: 80px;
 			}
-			.p2{
+			
+			.p2 {
 				margin-top: -20px;
 				font-size: 12px;
 			}
@@ -66,16 +76,28 @@
 	<body>
 		<div class="mui-content">
 			<div class="mui-slider" id="slider">
-				  <div class="mui-slider-group mui-slider-loop">
-				    <!--支持循环，需要重复图片节点-->
-				    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="images/4.jpg" /></a></div>
-				    <div class="mui-slider-item"><a href="#"><img class="img1" src="images/1.jpg" /></a></div>
-				    <div class="mui-slider-item"><a href="#"><img class="img1" src="images/2.jpg" /></a></div>
-				    <div class="mui-slider-item"><a href="#"><img class="img1" src="images/3.jpg" /></a></div>
-				    <div class="mui-slider-item"><a href="#"><img class="img1" src="images/4.jpg" /></a></div>
-				    <!--支持循环，需要重复图片节点-->
-				    <div class="mui-slider-item mui-slider-item-duplicate"><a href="#"><img src="1.jpg" /></a></div>
-				  </div>
+				<div class="mui-slider-group mui-slider-loop">
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#"><img src="images/4.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img class="img1" src="images/1.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img class="img1" src="images/2.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img class="img1" src="images/3.jpg" /></a>
+					</div>
+					<div class="mui-slider-item">
+						<a href="#"><img class="img1" src="images/4.jpg" /></a>
+					</div>
+					<!--支持循环，需要重复图片节点-->
+					<div class="mui-slider-item mui-slider-item-duplicate">
+						<a href="#"><img src="images/1.jpg" /></a>
+					</div>
+				</div>
 			</div>
 			<div>
 				<table class="table1">
@@ -120,110 +142,134 @@
 			<div id="canteen">
 				<h4>午餐菜谱</h4>
 				<div id="menu-one" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-			        <div class="mui-scroll" id="menu">
-			            <a class="mui-control-item mui-active food-pictures">
+					<div class="mui-scroll" id="menu">
+						<a class="mui-control-item mui-active food-pictures">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f1.jpg" />
-									<p class="p2">酸辣椒炒肉</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f1.jpg" />
+										<p class="p2">酸辣椒炒肉</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f2.jpg" />
-									<p class="p2">小炒鸡</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f2.jpg" />
+										<p class="p2">小炒鸡</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f3.jpg" />
-									<p class="p2">青椒炒蛋</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f3.jpg" />
+										<p class="p2">青椒炒蛋</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f4.jpg" />
-									<p class="p2">大碗花菜</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f4.jpg" />
+										<p class="p2">大碗花菜</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f5.jpg" />
-									<p class="p2">小炒肉</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f5.jpg" />
+										<p class="p2">小炒肉</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f6.jpg" />
-									<p class="p2">红烧肉</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f6.jpg" />
+										<p class="p2">红烧肉</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			        </div>
-			    </div>
+						</a>
+					</div>
+				</div>
 				<h4>晚餐菜谱</h4>
 				<div id="menu-two" class="mui-scroll-wrapper mui-slider-indicator mui-segmented-control mui-segmented-control-inverted">
-			        <div class="mui-scroll">
-			            <a class="mui-control-item mui-active">
+					<div class="mui-scroll">
+						<a class="mui-control-item mui-active">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f6.jpg" />
-									<p class="p2">红烧肉</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f6.jpg" />
+										<p class="p2">红烧肉</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f7.jpg" />
-									<p class="p2">原味茄子</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f7.jpg" />
+										<p class="p2">原味茄子</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f8.jpg" />
-									<p class="p2">麻婆豆腐</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f8.jpg" />
+										<p class="p2">麻婆豆腐</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f9.jpg" />
-									<p class="p2">干煸四季豆</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f9.jpg" />
+										<p class="p2">干煸四季豆</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f10.jpg" />
-									<p class="p2">鱼香肉丝</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f10.jpg" />
+										<p class="p2">鱼香肉丝</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			            <a class="mui-control-item">
+						</a>
+						<a class="mui-control-item">
 							<table class="table2">
-								<tr><td>
-									<img class="img2" src="images/f1.jpg" />
-									<p class="p2">酸辣椒炒肉</p>
-								</td></tr>
+								<tr>
+									<td>
+										<img class="img2" src="images/f1.jpg" />
+										<p class="p2">酸辣椒炒肉</p>
+									</td>
+								</tr>
 							</table>
-			            </a>
-			        </div>
-			    </div>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 		<script src="js/mui.min.js"></script>
@@ -231,9 +277,47 @@
 		<script>
 			var gallery = mui('.mui-slider');
 			gallery.slider({
-			  interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
+				interval: 5000 //自动轮播周期，若为0则不自动播放，默认为0；
 			});
-			
+
+			$.ready(function() {
+				$.ajax({
+					url: 'http://172.16.42.21:8080/Canteen/menu/#',
+					type: 'POST',
+					data: JSON.stringify(data),
+					contentType: 'application/json; charset=utf-8',
+					dataType: 'json',
+					success: function(response) {
+						addMenu(response);
+					},
+					error: function(msg) {
+						console.log(msg)
+					}
+				});
+			});
+
+			function addMenu(response) {
+
+				var a = $("<a class=\"mui-control-item\"></a>");
+				var td = $("<td></td>");
+				var tr = $("<tr></tr>");
+				var table = $("<table></table>");
+
+				var img = $("<img class=\"img2\"  />");
+				//					img.attr("src":)
+				var p = $("<p class=\"p2\"></p>");
+				var name = "";
+				p.text(name);
+
+				img.append(p);
+
+				td.html(img);
+				tr.html(td);
+				table.html(tr);
+				a.html(table);
+
+			}
+
 			(function($, doc) {
 				$.init();
 				var settings = app.getSettings();
@@ -251,26 +335,26 @@
 					//设置
 					var settingButton = doc.getElementById('setting');
 					//settingButton.style.display = settings.autoLogin ? 'block' : 'none';
-//					settingButton.addEventListener('tap', function(event) {
-//						$.openWindow({
-//							id: 'setting',
-//							show: {
-//								aniShow: 'pop-in'
-//							},
-//							styles: {
-//								popGesture: 'hide'
-//							},
-//							waiting: {
-//								autoShow: false
-//							}
-//						});
-//					});
+					//					settingButton.addEventListener('tap', function(event) {
+					//						$.openWindow({
+					//							id: 'setting',
+					//							show: {
+					//								aniShow: 'pop-in'
+					//							},
+					//							styles: {
+					//								popGesture: 'hide'
+					//							},
+					//							waiting: {
+					//								autoShow: false
+					//							}
+					//						});
+					//					});
 					//--
 					$.oldBack = mui.back;
 					var backButtonPress = 0;
 					$.back = function(event) {
 						backButtonPress++;
-						if (backButtonPress > 1) {
+						if(backButtonPress > 1) {
 							plus.runtime.quit();
 						} else {
 							plus.nativeUI.toast('再按一次退出应用');
@@ -282,19 +366,18 @@
 					};
 				});
 			}(mui, document));
-			
-		    mui(".mui-scroll").on('tap','.mui-control-item',function(){ 
 
-			    //打开新闻详情
-			     mui.openWindow({
-			     id:'details', 
-			     url:'details.html',
-		           extras: {    //extras里面的就是参数了
-		                name: "hy"
-		           },
-			     });
-		    })
+			mui(".mui-scroll").on('tap', '.mui-control-item', function() {
 
+				//打开新闻详情
+				mui.openWindow({
+					id: 'details',
+					url: 'details.html',
+					extras: { //extras里面的就是参数了
+						name: "hy"
+					},
+				});
+			})
 		</script>
 	</body>
 
